@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import {AppContainer} from 'react-hot-loader';
-
+import { ConnectedRouter } from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory';
+import Root from './router/routes'
 
 const render = ( Component ) => {
     ReactDOM.render(
@@ -14,11 +16,11 @@ const render = ( Component ) => {
         document.getElementById("root")
     );
 }
-render(App);
+render(Root);
 registerServiceWorker();
 
 if(module.hot){
-    module.hot.accept(App, () => {
-        render(App)
+    module.hot.accept(Root, () => {
+        render(Root)
     });
 }
